@@ -1,1 +1,1 @@
-# A Guide to Domain Reduction using Choco Solver
+# Domain Reduction using Choco Solver
