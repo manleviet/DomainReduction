@@ -1,10 +1,12 @@
 import org.chocosolver.solver.Model;
 import org.chocosolver.solver.Solver;
+import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.exception.ContradictionException;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.util.iterators.DisposableValueIterator;
 
 import java.util.Locale;
+import java.util.function.DoubleToIntFunction;
 
 public class CarModel {
 
@@ -177,9 +179,15 @@ public class CarModel {
         // Knowledge Base
         createKB();
 
+//        System.out.println(model.getNbCstrs());
+
+//        for (Constraint c: model.getCstrs()) {
+//            System.out.println(c);
+//        }
+
         // Variables' domain before applying restrictions
-        System.out.println("------ INITIAL DOMAINS ------");
-        printAllVarDomains();
+//        System.out.println("------ INITIAL DOMAINS ------");
+//        printAllVarDomains();
 
         // CHECK THE FIRST RESTRICTION & THE SECOND RESTRICTION
         // Diesel-Limousine gibt's nicht in Blau und Grau
@@ -199,7 +207,7 @@ public class CarModel {
 
         // first selection: Limousine
         // second selection: grau (class 1)
-        scenario4(); // not diesel, not benzin
+//        scenario4(); // not diesel, not benzin
 
         // CHECK THE THIRD RESTRICTION
         // Transporter gibt's nur Elektrisch oder Diesel
